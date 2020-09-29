@@ -1,31 +1,21 @@
-import React, {useState} from 'react'
-import _ from 'lodash'
-
-let counter = 12
+import React from 'react'
 
 export default function MapPoop(props) {
   
-  const counterAdd = () => {
-    return counter++;
-  };
-
-  function getRandomInt(max) {
-    return Math.random();
-  }
 
   return (
     <ul>
       {props.poop.map((item, index) => (
-        <li key={_.uniqueId}>
+        <li key={item.poopId}>
           {item.poopKey}
-          {index}
+          {item.poopId + 1}
           <select>
-            <option>IDK</option>
-            <option>IT WAS SO MUCH FUN</option>
-            <option>Pretty Good</option>
-            <option>Eh</option>
-            <option>Pretty Bad</option>
-            <option>WHY MUST I SUFFER?!</option>
+            <option>Expecting soon</option>
+            <option>5 I am in heaven </option>
+            <option>4 IT WAS SO MUCH FUN</option>
+            <option>3 Eh, not life changing</option>
+            <option>2 At least I'm not dying </option>
+            <option>1 WHY MUST I SUFFER?!</option>
           </select>
           <button onClick={() => props.method(item.poopId)}>
             Delete Poop
